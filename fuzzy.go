@@ -10,6 +10,9 @@ import (
 )
 
 const (
+	// compare results of 15 versus 19
+	goodFactorForEnglishTextContent = 15
+
 	blockBase           = 36
 	byteSize            = 8
 	blockHashModulo     = math.MaxInt32
@@ -199,6 +202,7 @@ func ParseHash(hashString string) (*UniformFuzzyHash, error) {
 		splitIndex = strings.Index(blocksString[lastSplitIndex:], blocksSeparator)
 		blockString := ""
 		if splitIndex >= 0 {
+			splitIndex = splitIndex + lastSplitIndex
 			blockString = blocksString[lastSplitIndex:splitIndex]
 		} else {
 			blockString = blocksString[lastSplitIndex:]

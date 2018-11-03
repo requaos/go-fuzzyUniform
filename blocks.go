@@ -19,7 +19,7 @@ func (b *UniformFuzzyHashBlock) String() string {
 	sb := strings.Builder{}
 	sb.Grow(blockMaxChars)
 	sb.WriteString(strconv.FormatInt(int64(b.blockHash), blockBase))
-	sb.WriteString(blocksSeparator)
+	sb.WriteString(blockInnerSeparator)
 	sb.WriteString(strconv.FormatInt(b.blockSize(), blockBase))
 	return sb.String()
 }
